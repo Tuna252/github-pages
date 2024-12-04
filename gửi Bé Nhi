@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gửi Bé Nhi 💗</title>
+    <style>
+        body {
+            font-family: Open Sans, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #87CEFA, #FFC0CB); /* Chuyển từ xanh da trời sang hồng phấn */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #ff6b6b;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+        .heart {
+            font-size: 5em;
+            color: #ff4d4d;
+            margin: 20px 0;
+      		animation: heartbeat 1.5s infinite;     
+        }
+       @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.2);
+            }
+            50% {
+                transform: scale(1);
+            }
+            75% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+      }
+        button {
+            background-color: #ff6b6b;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff4d4d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Xin Lỗi Bé Nhi</h1>
+    <div class="heart">❤️</div>
+    <p>Bé Nhi thân mến,</p>
+    <p>
+       Tuấn xin lỗi bé vì làm bé giận nhiềuuuu 😢😢😢 Tuấn thực sự khong có cố ý ạ chỉ muốn bé vui thuiii.
+    </p>
+       Nhi tha lỗi Tuấn nhé, Tuấn khong muốn thấy Nhi buồn đâuuu... 🥺🥺🥺  
+        
+ 
+    <p>Hi vọng Nhi cười nhìu hơn vì Nhi dễ thương lắm ạaa🥰🥰🥰.</p>
+    <button onclick="alert('Mong Bé Nhi sẽ tha lỗi cho mình!🥹🥹🥹')">Tha lỗi nhé!</button>
+</body>
+</html>
