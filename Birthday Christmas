@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday - Christmas Theme</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f8ff;
+            color: #333;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1608889171406-9f4a4c4d1dc4'); /* Christmas themed background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+        .title {
+            font-size: 3em;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 1.5em;
+            color: #ffeadb;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        .birthday-card {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        .birthday-card p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Merry Christmas & Happy Birthday!</h1>
+        <p class="subtitle">Wishing you a day filled with love, joy, and holiday magic.</p>
+        <div class="birthday-card">
+            <p>May all your wishes come true. Have a fantastic birthday surrounded by the festive spirit of Christmas!</p>
+        </div>
+    </div>
+
+    <canvas class="snow"></canvas>
+
+    <script>
+        // Snowfall Effect
+        const canvas = document.querySelector('.snow');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const snowflakes = [];
+
+        function createSnowflakes() {
+            for (let i = 0; i < 100; i++) {
+                snowflakes.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    radius: Math.random() * 4 + 1,
+                    speed: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawSnowflakes() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            snowflakes.forEach(snowflake => {
+                ctx.moveTo(snowflake.x, snowflake.y);
+                ctx.arc(snowflake.x, snowflake.y, snowflake.radius, 0, Math.PI * 2);
+            });
+            ctx.fill();
+            updateSnowflakes();
+        }
+
+        function updateSnowflakes() {
+            snowflakes.forEach(snowflake => {
+                snowflake.y += snowflake.speed;
+                if (snowflake.y > canvas.height) {
+                    snowflake.y = 0;
+                    snowflake.x = Math.random() * canvas.width;
+                }
+            });
+        }
+
+        function animateSnowfall() {
+            drawSnowflakes();
+            requestAnimationFrame(animateSnowfall);
+        }
+
+        createSnowflakes();
+        animateSnowfall();
+    </script>
+</body>
+</html>
